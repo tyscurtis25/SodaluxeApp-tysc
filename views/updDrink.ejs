@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Drink</title>
+</head>
+<body>
+    <h1>Update Drink Info</h1>
+    <span id="message"></span>
+    <form action="/updDrink" method="POST">
+        <table>
+            <%console.log("Drinklist: ", drink);%>
+            <input type="hidden" name="id" value="<%=drink[0].id%>">
+            <tr>
+                <td>
+                    <label for="drink-Name">Drink Name:</label>
+                </td>
+                <td>
+                    <input id="drinkName" type="text" name="drinkName"
+                    value="<%=drink[0].drinkName%>">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="drink-Ingred">Drink Ingredients:</label>
+                </td>
+                <td>
+                    <input id="drinkIngred" type="text" name="drinkIngred"
+                    value="<%=drink[0].drinkIngred%>">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="drink-Price">Drink Price:</label>
+                </td>
+                <td>
+                    <input id="drinkPrice" type="text" name="drinkPrice"
+                    value="<%=drink[0].drinkPrice%>">
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Save">
+    </form>
+    <br>
+    <form action="\drinklist"><input type="submit" value="Cancel"></form>    
+</body>
+</html>

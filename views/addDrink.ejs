@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Drink</title>
+</head>
+<body>
+    <h1>Add Drink</h1>
+    <form action="\addDrink" method="POST">
+        <table>
+            <tr>
+                <td>
+                    <label for="drinkName">Enter Drink Name:</label>
+                </td>
+                <td>
+                    <input id="drinkName" type="text" name="drinkName">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="drinkIngred">Enter Drink Ingredients:</label>
+                </td>
+                <td>
+                    <input id="drinkIngred" type="text" name="drinkIngred">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="drinkPrice">Enter Drink Price:</label>
+                </td>
+                <td>
+                    <input id="drinkPrice" type="text" name="drinkPrice">
+                </td>
+            </tr>
+        <br>
+        </table>
+        <input type="submit" value="Save">    
+    </form>
+    <br>
+    <form action="\drinklist"><input type="submit" value="Cancel"></form>
+    <!--<% var fullName="John Locke"; %>
+    <p id="fullName"><%=fullName %></p>
+    <script>
+        document.getElementById("fullName").innerHTML = "Kate Austin"
+    </script>-->
+</body>
+</html>

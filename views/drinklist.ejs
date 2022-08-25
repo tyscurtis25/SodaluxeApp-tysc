@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            font-size: xx-large;
+        }
+    </style>
+    <title>Drink List</title>
+</head>
+
+<body>
+    <div class="container">
+    <!--Use EJS to receive and format the SQLite Data-->
+    <h1>Drink List</h1>
+    <% {console.log("listing drinks: " + drinkList.length);} %>
+        <table class=" table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        <!-- Add a form and button to go to add a vehicle route -->
+                        <form method="GET" action="\addDrink">
+                            <input type="submit" value="Add Drink">
+                        </form>
+                    </th>
+                    <th >Name</th>
+                    <th >Ingredients</th>
+                    <th >Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- EJS loop tp create a table row for each vehicle -->
+                <% for(var i=0;i<drinkList.length;i++) { %>
+                    <tr>
+                        <td>
+                            <!-- Add a form and button on each row to edit the vehicle -->
+                            <form action="/updDrink/<%= drinkList[i].id %>"
+                                method="get" id="udpDrink" name="updDrink">
+                                <input type="submit" name="Edit"
+                                    value="Edit">
+                            </form>
+                        </td>
+                        <td><%= drinkList[i].drinkName %></td>
+                        <td><%= drinkList[i].drinkIngred %></td>
+                        <td><%= drinkList[i].drinkPrice %></td>
+                        <td>
+                            <!-- Add a form and button on each row to bring up the safe delete process -->
+                            <form action="/delDrink/<%= drinkList[i].id %>"
+                                method="post" id="delDrink<%=drinkList[i].id%>"
+                                name="delDrink<%=drinkList[i].id%>">
+                                <input type="button" name="Delete"
+                                    value="Delete" onclick="safeDelete('delDrink<%=drinkList[i].id%>')">
+                            </form>
+                        </td>
+                    </tr>
+                <%}%>
+            </tbody>
+        </table>
+
+    </div>
+    <script>
+        /*** Ask Mercy Ouestion before deleting a vehicle ***/
+        function safeDelete(deleteDrink) {
+            console.log("passed to safeDelete: " + deleteDrink);
+            let yesNo = confirm("Are you sure?");
+            if (yesNo === true) {
+                console.log("submitting delete; " + deleteDrink);
+                document.forms[deleteDrink].submit();
+            }
+        }
+    </script>
+</body>
+</html>
