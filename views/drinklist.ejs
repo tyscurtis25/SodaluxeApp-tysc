@@ -133,5 +133,16 @@
     </footer>
 
     <script src="/js/bootstrap.bundle.min.js"></script>
+    <script>
+        /*** Ask Mercy Ouestion before deleting a vehicle ***/
+        function safeDelete(deleteDrink) {
+            console.log("passed to safeDelete: " + deleteDrink);
+            let yesNo = confirm("Are you sure?");
+            if (yesNo === true) {
+                console.log("submitting delete; " + deleteDrink);
+                document.forms[deleteDrink].submit();
+            }
+        }
+    </script>
 </body>
 </html>
