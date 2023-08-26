@@ -11,6 +11,9 @@ let express = require("express"); //loads the exress link into the application
 /* we do things through and by the instance of Express */
 let app = express(); // object of type express
 
+//Static Files
+app.use(express.static('public'));
+
 //post express 4.16, use
 app.use(express.urlencoded({ extended: true }));//whenever I do express stuff, this lets me put special chars in the url
 
@@ -20,7 +23,7 @@ app.set("view engine", "ejs");//set the "view engine" to the value of "ejs"
 /* initialize the web server on specified port  */
 //tells what port to listen on, and has a callback function
 app.listen(listenPort, function () {
-    console.log("Uhh, thirsty? Good, I'm listening on port " + listenPort)
+    console.log("Uhh, thirsty? Listening on port " + listenPort)
 });
 
 /* UP TO THIS POINT, YOU NEED THIS CODE TO MAKE 
@@ -31,7 +34,7 @@ AN EXPRESS APP USING EJS */
 let knex = require("knex")({
     client: "sqlite3",
     connection: {
-        filename: "./FizzMenu.db"
+        filename: "./Sodaluxe.db"
     },
     useNullAsDefault: true
 });

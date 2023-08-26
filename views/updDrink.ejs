@@ -3,45 +3,70 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Drink</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Quicksand&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <h1>Update Drink Info</h1>
-    <span id="message"></span>
-    <form action="/updDrink" method="POST">
-        <table>
-            <%console.log("Drinklist: ", drink);%>
-            <input type="hidden" name="id" value="<%=drink[0].id%>">
-            <tr>
-                <td>
-                    <label for="drink-Name">Drink Name:</label>
-                </td>
-                <td>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container col-9">
+            <a class="navbar-brand" href="\drinklist">Sodaluxe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="\drinklist">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="\addDrink">Add Drink</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container col-4">
+        <h1>Update Drink Info</h1>
+        <span id="message"></span>
+        <form action="/updDrink" method="POST">
+            <div>
+                <%console.log("Drinklist: ", drink);%>
+                <input type="hidden" name="id" value="<%=drink[0].id%>">
+                <div>
+                    <label for="drink-Name" class="form-label">Drink Name:</label>
                     <input id="drinkName" type="text" name="drinkName"
-                    value="<%=drink[0].drinkName%>">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="drink-Ingred">Drink Ingredients:</label>
-                </td>
-                <td>
+                    value="<%=drink[0].drinkName%>" class="form-control">
+                </div>
+                <div>
+                    <label for="drink-Ingred" class="form-label">Drink Ingredients:</label>
                     <input id="drinkIngred" type="text" name="drinkIngred"
-                    value="<%=drink[0].drinkIngred%>">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="drink-Price">Drink Price:</label>
-                </td>
-                <td>
+                    value="<%=drink[0].drinkIngred%>" class="form-control">
+                </div>
+                <div>
+                    <label for="drink-Price" class="form-label">Drink Price:</label>
                     <input id="drinkPrice" type="text" name="drinkPrice"
-                    value="<%=drink[0].drinkPrice%>">
-                </td>
-            </tr>
-        </table>
-        <input type="submit" value="Save">
-    </form>
-    <br>
-    <form action="\drinklist"><input type="submit" value="Cancel"></form>    
+                    value="<%=drink[0].drinkPrice%>" class="form-control">
+                </div>
+            </div>
+            <input type="submit" value="Save" class="btn menu-btn mt-3">
+        </form>
+        <form action="\drinklist"><input type="submit" value="Cancel" class="mt-2 mb-4 btn menu-btn"></form>
+    </div>
+
+    <footer class="footer">
+        <div class="container col-9">
+            <p>&copy;2023 sodaluxe.com</p>
+        </div>
+    </footer>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

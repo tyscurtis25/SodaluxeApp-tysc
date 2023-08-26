@@ -1,0 +1,99 @@
+:root {
+    --one: #D97904;
+    --two: #D98E04;
+    --three: #D9A404;
+    --four: #6CCED9;
+    --five: #2E9AA6;
+}
+
+/* 
+font-family: 'Lobster', cursive;
+font-family: 'Quicksand', sans-serif;
+*/
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-family: 'Lobster', cursive;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+body {
+    background-color: var(--five);
+    font-family: 'Quicksand', sans-serif;
+}
+
+nav {
+    background-color: #2E9AA6;
+    color: #ffffff;
+}
+
+nav a, li, .nav-link {
+    color: #ffffff;
+    transition: color 0.7s ease;
+}
+
+.nav-link:hover {
+    color: #D9A404;
+    font-weight: bold;
+}
+
+.navbar-brand {
+    font-family: 'Lobster', cursive;
+    transition: color 0.7s ease;
+}
+
+.navbar-brand:hover {
+    color: #D9A404;
+}
+
+table {
+    font-size: 16px;
+    border-radius: 15px;
+}
+
+th {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+td {
+    color: #ffffff;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #6CCED9;
+}
+
+.menu-btn {
+    border: 2px solid transparent;
+    background-color: #D97904;
+    color: #ffffff;
+    padding: 0.25rem; /* Add padding similar to Bootstrap buttons */
+    font-size: 16px; /* Set font size similar to Bootstrap buttons */
+    line-height: 1.5; /* Set line height similar to Bootstrap buttons */
+    border-radius: 0.25rem; /* Add border radius similar to Bootstrap buttons */
+    transition: background-color 0.4s ease; /* Add a smooth transition effect */
+}
+
+.menu-btn:hover {
+    background-color: #D9A404; /* Change background color on hover */
+    color: #ffffff;
+    font-weight: bold;
+    border-color: transparent;
+}
+
+label {
+    color: #ffffff;
+}
+
+.footer {
+    color: #ffffff;
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent;
+}

@@ -3,45 +3,64 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add Drink</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Quicksand&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <h1>Add Drink</h1>
-    <form action="\addDrink" method="POST">
-        <table>
-            <tr>
-                <td>
-                    <label for="drinkName">Enter Drink Name:</label>
-                </td>
-                <td>
-                    <input id="drinkName" type="text" name="drinkName">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="drinkIngred">Enter Drink Ingredients:</label>
-                </td>
-                <td>
-                    <input id="drinkIngred" type="text" name="drinkIngred">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="drinkPrice">Enter Drink Price:</label>
-                </td>
-                <td>
-                    <input id="drinkPrice" type="text" name="drinkPrice">
-                </td>
-            </tr>
-        <br>
-        </table>
-        <input type="submit" value="Save">    
-    </form>
-    <br>
-    <form action="\drinklist"><input type="submit" value="Cancel"></form>
-    <!--<% var fullName="John Locke"; %>
-    <p id="fullName"><%=fullName %></p>
-    <script>
-        document.getElementById("fullName").innerHTML = "Kate Austin"
-    </script>-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container col-9">
+            <a class="navbar-brand" href="\drinklist">Sodaluxe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="\drinklist">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="\addDrink">Add Drink</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container col-4">
+        <h1>Add Drink</h1>
+        <form action="\addDrink" method="POST">
+            <div>
+                <div>
+                    <label for="drinkName" class="form-label">Enter Drink Name:</label>
+                    <input id="drinkName" type="text" name="drinkName" class="form-control">
+                </div>
+                <div>
+                    <label for="drinkIngred" class="form-label">Enter Drink Ingredients:</label>
+                    <input id="drinkIngred" type="text" name="drinkIngred" class="form-control">
+                </div>
+                <div>
+                    <label for="drinkPrice" class="form-label">Enter Drink Price:</label>
+                    <input id="drinkPrice" type="text" name="drinkPrice" class="form-control">
+                </div>
+            </div>
+            <input type="submit" value="Save" class="btn menu-btn mt-3">
+        </form>
+        <form action="\drinklist"><input type="submit" value="Cancel" class="mt-2 mb-4 btn menu-btn"></form>
+    </div>
+
+    <footer class="footer text-right">
+        <div class="container col-9">
+            <p>&copy;2023 sodaluxe.com</p>
+        </div>
+    </footer>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

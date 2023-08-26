@@ -1,10 +1,10 @@
 {
-  "name": "fizzapp",
+  "name": "sodaluxeapp",
   "version": "1.0.0",
-  "description": "last practice for final exam",
+  "description": "revisiting a project...",
   "main": "index.js",
   "scripts": {
-    "test": "pouring soda now..."
+    "start": "pouring soda now..."
   },
   "author": "T-Money",
   "license": "ISC",
